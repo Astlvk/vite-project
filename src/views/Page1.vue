@@ -7,15 +7,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { computed, defineComponent } from 'vue'
+import { useStore } from '@/store'
 
 export default defineComponent({
   setup () {
-    const timer = ref(0)
+    const store = useStore()
 
-    setInterval(() => {
-      timer.value += 1
-    }, 1000)
+    const timer = computed(() => store.state.app.timer)
+    store.dispatch('app/timing')
 
     return {
       msg: 'hello world',
