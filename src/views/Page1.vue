@@ -3,24 +3,24 @@
     {{ msg }}
     <br />
     {{ timer }}
+    <br />
+
+    <Button type="primary">
+      Hello world
+    </Button>
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue'
+<script lang="ts" setup>
+import { computed } from 'vue'
 import { useStore } from '@/store'
+import { Button } from 'vant'
 
-export default defineComponent({
-  setup () {
-    const store = useStore()
+const store = useStore()
 
-    const timer = computed(() => store.state.app.timer)
-    store.dispatch('app/timing')
+const msg = 'hello world'
+const timer = computed(() => store.state.app.timer)
 
-    return {
-      msg: 'hello world',
-      timer
-    }
-  }
-})
+store.dispatch('app/timing')
+
 </script>

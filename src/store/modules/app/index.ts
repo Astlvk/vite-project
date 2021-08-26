@@ -15,7 +15,7 @@ const app: Module<AppState, RootState> = {
       state.timer = timer
     },
 
-    accumulateTimer(state, timer: number) {
+    accumulateTimer (state, timer: number) {
       state.timer += timer
     }
   },
