@@ -22,12 +22,12 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
       '@views': path.resolve(__dirname, 'src/views')
     }
-  },
-  css: {
-    postcss: {
-      plugins: [
-        require('autoprefixer')
-      ]
-    }
   }
+  // css: {
+  //   postcss: {
+  //     plugins: [
+  //       require('autoprefixer')
+  //     ]
+  //   }
+  // }
 })
